@@ -36,6 +36,13 @@ public class Md5Util {
         SimpleHash hash = new SimpleHash(algorithmName, message, salt, hashIterations);
         return hash.toHex();
     }
+
+    public static void main(String[] args) {
+        String account = "fxp";
+        String salt = "abc";
+        String passwd = "12345";
+        System.out.println(encrypt(passwd,account+salt));
+    }
     
     
 }
