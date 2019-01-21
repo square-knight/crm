@@ -100,7 +100,7 @@ layui.use(['form', 'layer','laydate'], function(){
     			var option = {
    			        title: {
    			            text: '客户与公司的成交额前十',
-   			            subtext: '数据来自东软客户关系管理系统'
+   			            subtext: '数据来自花花客户关系管理系统'
    			        },
    			        tooltip: {
    			            trigger: 'axis',

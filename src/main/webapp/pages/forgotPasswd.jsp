@@ -116,7 +116,7 @@ div#myForm {
     <!-- 头部区域 -->
     <div class="layui-header cr-header">
         <div class="main">
-            <a href="#" class="logo">东软CRM</a>
+            <a href="#" class="logo">花花CRM</a>
             <div class="nav-user">     
                 <span><a href="#">登录</a>
             </div>
@@ -176,7 +176,7 @@ div#myForm {
     </div>
     </div>
     <div class="cr-footer"> 
-        © 东软CRM － 以极简方式管理客户和业务过程
+        © 花花CRM － 以极简方式管理客户和业务过程
     </div>
 	
 

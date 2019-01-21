@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>东软客户关系管理系统</title>
+	<title>花花客户关系管理系统</title>
 	<!-- build:css -->
 	<link rel="stylesheet" href="layui/css/layui.css">
 	<link rel="stylesheet" href="layui/css/kitadmin.css">
@@ -104,7 +104,7 @@
 		</div>
 		<!-- footer -->
 		<div class="layui-footer" kit-footer="true">
-			2017 © kit.zhengjinfan.cn MIT license
+			2019
 		</div>
 	</div>
 	

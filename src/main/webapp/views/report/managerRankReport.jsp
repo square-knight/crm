@@ -95,7 +95,7 @@ layui.use(['layer', 'form', 'laydate'], function(){
     			var option = {
    			        title: {
    			            text: '客户经理业绩前十',
-   			            subtext: '数据来自东软客户关系管理系统'
+   			            subtext: '数据来自花花客户关系管理系统'
    			        },
    			        tooltip: {
    			            trigger: 'axis',
