@@ -19,7 +19,7 @@
   <!-- 使用别名优化mybatis配置 -->
   <typeAliases>
     <!-- 命名统一规范时，还可以使用package包名简化别名配置 -->
-    <package name="com.neuedu.crm.pojo"/>
+    <package name="com.huahua.crm.pojo"/>
   </typeAliases>
  
   <!-- 用于配置接口映射文件 -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.CustomerCareMapper">
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.CustomerCare">
+<mapper namespace="com.huahua.crm.mapper.CustomerCareMapper">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.CustomerCare">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="linkman_id" jdbcType="INTEGER" property="linkmanId" />
     <result column="birthday" jdbcType="DATE" property="birthday" />
@@ -75,7 +75,7 @@
     id, linkman_id, birthday, `time`, detail, `type`, `status`, feedback, create_time, 
     manager_id
   </sql>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.CustomerCareExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.CustomerCareExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -107,13 +107,13 @@
     delete from customer_care
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.CustomerCareExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.CustomerCareExample">
     delete from customer_care
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.CustomerCare" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.CustomerCare" useGeneratedKeys="true">
     insert into customer_care (linkman_id, birthday, `time`, 
       detail, `type`, `status`, 
       feedback, create_time, manager_id
@@ -123,7 +123,7 @@
       #{feedback,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{managerId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.CustomerCare" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.CustomerCare" useGeneratedKeys="true">
     insert into customer_care
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="linkmanId != null">
@@ -184,7 +184,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.CustomerCareExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.CustomerCareExample" resultType="java.lang.Long">
     select count(*) from customer_care
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -244,7 +244,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.CustomerCare">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.CustomerCare">
     update customer_care
     <set>
       <if test="linkmanId != null">
@@ -277,7 +277,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.CustomerCare">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.CustomerCare">
     update customer_care
     set linkman_id = #{linkmanId,jdbcType=INTEGER},
       birthday = #{birthday,jdbcType=DATE},

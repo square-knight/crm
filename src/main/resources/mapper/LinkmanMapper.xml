@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.LinkmanMapper">
+<mapper namespace="com.huahua.crm.mapper.LinkmanMapper">
     <cache/>
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.Linkman">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.Linkman">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="position" jdbcType="VARCHAR" property="position" />
@@ -76,7 +76,7 @@
     id, `name`, `position`, office_phone, mobile_phone, birthday, sex, remark, `level`, 
     customer_id
   </sql>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.LinkmanExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.LinkmanExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -108,13 +108,13 @@
     delete from linkman
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.LinkmanExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.LinkmanExample">
     delete from linkman
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.Linkman" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.Linkman" useGeneratedKeys="true">
     insert into linkman (`name`, `position`, office_phone, 
       mobile_phone, birthday, sex, 
       remark, `level`, customer_id
@@ -124,7 +124,7 @@
       #{remark,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, #{customerId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.Linkman" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.Linkman" useGeneratedKeys="true">
     insert into linkman
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -185,7 +185,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.LinkmanExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.LinkmanExample" resultType="java.lang.Long">
     select count(*) from linkman
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -245,7 +245,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.Linkman">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.Linkman">
     update linkman
     <set>
       <if test="name != null">
@@ -278,7 +278,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.Linkman">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.Linkman">
     update linkman
     set `name` = #{name,jdbcType=VARCHAR},
       `position` = #{position,jdbcType=VARCHAR},

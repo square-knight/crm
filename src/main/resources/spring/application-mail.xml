@@ -37,7 +37,7 @@
         <property name="from" value="${mail.username}" />
     </bean>
     
-    <bean id="mailUtil" class="com.neuedu.crm.utils.MailUtil">
+    <bean id="mailUtil" class="com.huahua.crm.utils.MailUtil">
         <property name="mailSender" ref="mailSender"></property>
         <property name="simpleMailMessage" ref="simpleMailMessage"></property>
     </bean>

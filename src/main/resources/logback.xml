@@ -143,12 +143,12 @@ xsi:noNamespaceSchemaLocation="http://www.padual.com/java/logback.xsd">
     </appender> 
     
     <!-- 指定线程包路径下的日志输出存储到数据库 -->
-    <logger name="com.neuedu.crm.aop" level="info" addtivity="false">  
+    <logger name="com.huahua.crm.aop" level="info" addtivity="false">
         <appender-ref ref="PROJECT-TASK"/>  
     </logger>  
     
     <!-- 控制台打印sql -->
-    <logger name="com.neuedu.crm.mapper" level="debug">
+    <logger name="com.huahua.crm.mapper" level="debug">
          <appender-ref ref="DEBUG" />
     </logger>
     

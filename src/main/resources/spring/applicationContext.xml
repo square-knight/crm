@@ -17,8 +17,8 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<aop:aspectj-autoproxy/>
    
     <!-- 整合spring + mybatis时，使用了注解配置，需要配置组件扫描器 -->
-    <context:component-scan base-package="com.neuedu.crm.service"></context:component-scan>
-    <context:component-scan base-package="com.neuedu.crm.aop"></context:component-scan>
+    <context:component-scan base-package="com.huahua.crm.service"></context:component-scan>
+    <context:component-scan base-package="com.huahua.crm.aop"></context:component-scan>
 
     <!-- 整合数据库连接池， 后续需要由spring进行数据库事务管理，故需要由spring统一管理数据库连接-->
     <context:property-placeholder ignore-unresolvable="true" location="classpath:properties/db_config.properties"/>
@@ -40,7 +40,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
     
     <!-- mapper接口是mybatis的组件，需要由mybatis提供的整合类进行扫描 -->
     <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.neuedu.crm.mapper"></property>
+        <property name="basePackage" value="com.huahua.crm.mapper"></property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
     

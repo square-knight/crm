@@ -21,7 +21,7 @@ http://www.springframework.org/schema/task/spring-task-3.2.xsd">
 	
 	<!-- 启用MVC注解 -->
     <mvc:annotation-driven />
-	<context:component-scan base-package="com.neuedu.crm.aop,com.neuedu.crm.controller,com.neuedu.crm.utils,com.neuedu.crm.task,com.neuedu.crm.exception" />
+	<context:component-scan base-package="com.huahua.crm.aop,com.huahua.crm.controller,com.huahua.crm.utils,com.huahua.crm.task,com.huahua.crm.exception" />
 	
 	<!-- 设置定时任务 -->
 	<task:annotation-driven scheduler="myScheduler" />
@@ -35,8 +35,8 @@ http://www.springframework.org/schema/task/spring-task-3.2.xsd">
         class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <set>
-                <bean class="com.neuedu.crm.utils.LocalDateTimeConverter" />
-                <bean class="com.neuedu.crm.utils.LocalDateConverter" />
+                <bean class="com.huahua.crm.utils.LocalDateTimeConverter" />
+                <bean class="com.huahua.crm.utils.LocalDateConverter" />
             </set>
         </property>
     </bean>

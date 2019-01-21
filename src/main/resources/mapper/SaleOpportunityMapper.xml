@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.SaleOpportunityMapper">
+<mapper namespace="com.huahua.crm.mapper.SaleOpportunityMapper">
     <cache/>
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.SaleOpportunity">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.SaleOpportunity">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="customer_id" jdbcType="INTEGER" property="customerId" />
     <result column="source" jdbcType="VARCHAR" property="source" />
@@ -100,7 +100,7 @@
     id, customer_id, `source`, success, `general`, contact_id, contact_phone, description, 
     creater, create_date, manager_id, allot_date, `status`, delete_status
   </sql>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.SaleOpportunityExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.SaleOpportunityExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -132,13 +132,13 @@
     delete from sale_opportunity
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.SaleOpportunityExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.SaleOpportunityExample">
     delete from sale_opportunity
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.SaleOpportunity" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.SaleOpportunity" useGeneratedKeys="true">
     insert into sale_opportunity (customer_id, `source`, success, 
       `general`, contact_id, contact_phone, 
       description, creater, create_date, 
@@ -150,7 +150,7 @@
       #{managerId,jdbcType=INTEGER}, #{allotDate,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, 
       #{deleteStatus,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.SaleOpportunity" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.SaleOpportunity" useGeneratedKeys="true">
     insert into sale_opportunity
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="customerId != null">
@@ -235,7 +235,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.SaleOpportunityExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.SaleOpportunityExample" resultType="java.lang.Long">
     select count(*) from sale_opportunity
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -311,7 +311,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.SaleOpportunity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.SaleOpportunity">
     update sale_opportunity
     <set>
       <if test="customerId != null">
@@ -356,7 +356,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.SaleOpportunity">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.SaleOpportunity">
     update sale_opportunity
     set customer_id = #{customerId,jdbcType=INTEGER},
       `source` = #{source,jdbcType=VARCHAR},

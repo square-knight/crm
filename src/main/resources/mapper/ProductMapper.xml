@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.ProductMapper">
+<mapper namespace="com.huahua.crm.mapper.ProductMapper">
     <cache/>
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.Product">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.Product">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="location" jdbcType="VARCHAR" property="location" />
@@ -83,7 +83,7 @@
   <sql id="Base_Column_List">
     id, `name`, `location`, version, unit, price, repertory, remarks, category_id
   </sql>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.ProductExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.ProductExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -115,13 +115,13 @@
     delete from product
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.ProductExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.ProductExample">
     delete from product
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.Product" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.Product" useGeneratedKeys="true">
     insert into product (`name`, `location`, version, 
       unit, price, repertory, 
       remarks, category_id)
@@ -129,7 +129,7 @@
       #{unit,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{repertory,jdbcType=INTEGER}, 
       #{remarks,jdbcType=VARCHAR}, #{categoryId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.Product" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.Product" useGeneratedKeys="true">
     insert into product
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -184,7 +184,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.ProductExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.ProductExample" resultType="java.lang.Long">
     select count(*) from product
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -240,7 +240,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.Product">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.Product">
     update product
     <set>
       <if test="name != null">
@@ -270,7 +270,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.Product">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.Product">
     update product
     set `name` = #{name,jdbcType=VARCHAR},
       `location` = #{location,jdbcType=VARCHAR},

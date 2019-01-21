@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.LoggingEventMapper">
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.LoggingEvent">
+<mapper namespace="com.huahua.crm.mapper.LoggingEventMapper">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.LoggingEvent">
     <id column="event_id" jdbcType="BIGINT" property="eventId" />
     <result column="timestmp" jdbcType="BIGINT" property="timestmp" />
     <result column="logger_name" jdbcType="VARCHAR" property="loggerName" />
@@ -23,7 +23,7 @@
     values(#{timestmp}, #{formattedMessage})
   </insert>
   
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.neuedu.crm.pojo.LoggingEvent">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.huahua.crm.pojo.LoggingEvent">
     <result column="formatted_message" jdbcType="LONGVARCHAR" property="formattedMessage" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -91,7 +91,7 @@
   <sql id="Blob_Column_List">
     formatted_message
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.neuedu.crm.pojo.LoggingEventExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.huahua.crm.pojo.LoggingEventExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -115,7 +115,7 @@
       </if>
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.LoggingEventExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.LoggingEventExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -149,13 +149,13 @@
     delete from logging_event
     where event_id = #{eventId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.LoggingEventExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.LoggingEventExample">
     delete from logging_event
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="event_id" keyProperty="eventId" parameterType="com.neuedu.crm.pojo.LoggingEvent" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="event_id" keyProperty="eventId" parameterType="com.huahua.crm.pojo.LoggingEvent" useGeneratedKeys="true">
     insert into logging_event (timestmp, logger_name, level_string, 
       thread_name, reference_flag, arg0, 
       arg1, arg2, arg3, caller_filename, 
@@ -167,7 +167,7 @@
       #{callerClass,jdbcType=VARCHAR}, #{callerMethod,jdbcType=VARCHAR}, #{callerLine,jdbcType=CHAR}, 
       #{formattedMessage,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="event_id" keyProperty="eventId" parameterType="com.neuedu.crm.pojo.LoggingEvent" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="event_id" keyProperty="eventId" parameterType="com.huahua.crm.pojo.LoggingEvent" useGeneratedKeys="true">
     insert into logging_event
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="timestmp != null">
@@ -258,7 +258,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.LoggingEventExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.LoggingEventExample" resultType="java.lang.Long">
     select count(*) from logging_event
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -358,7 +358,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.LoggingEvent">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.LoggingEvent">
     update logging_event
     <set>
       <if test="timestmp != null">
@@ -406,7 +406,7 @@
     </set>
     where event_id = #{eventId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.neuedu.crm.pojo.LoggingEvent">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.huahua.crm.pojo.LoggingEvent">
     update logging_event
     set timestmp = #{timestmp,jdbcType=BIGINT},
       logger_name = #{loggerName,jdbcType=VARCHAR},
@@ -424,7 +424,7 @@
       formatted_message = #{formattedMessage,jdbcType=LONGVARCHAR}
     where event_id = #{eventId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.LoggingEvent">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.LoggingEvent">
     update logging_event
     set timestmp = #{timestmp,jdbcType=BIGINT},
       logger_name = #{loggerName,jdbcType=VARCHAR},

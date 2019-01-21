@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.ServiceMapper">
+<mapper namespace="com.huahua.crm.mapper.ServiceMapper">
     <cache/>
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.Service">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.Service">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="general" jdbcType="VARCHAR" property="general" />
@@ -82,7 +82,7 @@
     id, `type`, `general`, customer_id, emergency, phone_number, `status`, request, creater, 
     create_date, handle_content, `handler`, handler_time, handle_result, `degree`, delete_status
   </sql>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.ServiceExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.ServiceExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -114,13 +114,13 @@
     delete from service
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.ServiceExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.ServiceExample">
     delete from service
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.Service" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.Service" useGeneratedKeys="true">
     insert into service (`type`, `general`, customer_id, 
       emergency, phone_number, `status`, 
       request, creater, create_date, 
@@ -134,7 +134,7 @@
       #{handleResult,jdbcType=VARCHAR}, #{degree,jdbcType=VARCHAR}, #{deleteStatus,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.Service" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.Service" useGeneratedKeys="true">
     insert into service
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="type != null">
@@ -231,7 +231,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.ServiceExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.ServiceExample" resultType="java.lang.Long">
     select count(*) from service
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -315,7 +315,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.Service">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.Service">
     update service
     <set>
       <if test="type != null">
@@ -366,7 +366,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.Service">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.Service">
     update service
     set `type` = #{type,jdbcType=VARCHAR},
       `general` = #{general,jdbcType=VARCHAR},

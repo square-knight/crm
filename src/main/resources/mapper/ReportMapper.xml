@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.ReportMapper">
+<mapper namespace="com.huahua.crm.mapper.ReportMapper">
     <cache/>
   <!-- 报表模块mapper.xml -->
   
@@ -27,7 +27,7 @@
   </select>
   
   <!-- 统计客户经理拥有的客户量排名  按时间 -->
-  <select id="countManagerCustomerRank" parameterType="com.neuedu.crm.pojo.Report" resultType="HashMap" >
+  <select id="countManagerCustomerRank" parameterType="com.huahua.crm.pojo.Report" resultType="HashMap" >
   	select count(c.id) as count, u.real_name as name from user u 
   	left join customer c on u.id = c.manager_id
 	<if test="startTime != null">
@@ -49,7 +49,7 @@
   </select>
   
   <!-- 统计客户的订单总额排名  即客户与公司成交了多少金额-->
-  <select id="customerOrderPriceRank" parameterType="com.neuedu.crm.pojo.Report" resultType="HashMap">
+  <select id="customerOrderPriceRank" parameterType="com.huahua.crm.pojo.Report" resultType="HashMap">
   	select c.name as customer, count(o.price) as count from customer c 
   	left join orders o on o.customer_id = c.id 
 	<if test="startTime != null">
@@ -65,7 +65,7 @@
   
   
   <!-- 日期统计 -->
-  <select id="countCustomerByDate"  parameterType="com.neuedu.crm.pojo.Report" resultType="HashMap" >
+  <select id="countCustomerByDate" parameterType="com.huahua.crm.pojo.Report" resultType="HashMap" >
         select date_format(create_time, #{resultDateFormat}) as date, count(*) as count 
 			from customer
 			where 1=1
@@ -89,7 +89,7 @@
   </select>
   
     <!-- 日期统计 -->
-  <select id="countFollowupByDate"  parameterType="com.neuedu.crm.pojo.Report" resultType="HashMap" >
+  <select id="countFollowupByDate" parameterType="com.huahua.crm.pojo.Report" resultType="HashMap" >
         select date_format(time, #{resultDateFormat}) as date, count(*) as count 
             from follow_up f,customer c  
             where 1=1
@@ -114,7 +114,7 @@
   </select>
   
   <!-- 分类统计-->
-  <select id="countCustomerByCategory"  parameterType="com.neuedu.crm.pojo.Report" resultType="HashMap" >
+  <select id="countCustomerByCategory" parameterType="com.huahua.crm.pojo.Report" resultType="HashMap" >
         select ${category} as category, count(*) as count 
         from customer
             where 1=1
@@ -136,14 +136,14 @@
         group by category   
   </select>
   
-  <!-- <select id="countManagerSerivce" parameterType="com.neuedu.crm.pojo.Report" resultType="HashMap">
+  <!-- <select id="countManagerSerivce" parameterType="com.huahua.crm.pojo.Report" resultType="HashMap">
     select ${service} as sCategory,count(*) as count
     from service
     WHERE handler = #{userId} AND DATE_SUB(CURDATE(),INTERVAL #{day} DAY) <![CDATA[<=]]> create_date
     GROUP BY sCategory
   </select> -->
   
-  <select id="countManagerSerivce" parameterType="com.neuedu.crm.pojo.Report" resultType="HashMap">
+  <select id="countManagerSerivce" parameterType="com.huahua.crm.pojo.Report" resultType="HashMap">
     <![CDATA[
     SELECT
     COUNT( DISTINCT IF ( s.id = NULL OR s.id = '', 0, s.id ) ) AS count,

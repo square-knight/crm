@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.LogMapper">
+<mapper namespace="com.huahua.crm.mapper.LogMapper">
     <cache/>
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.Log">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.Log">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="operation" jdbcType="VARCHAR" property="operation" />
@@ -70,7 +70,7 @@
   <sql id="Base_Column_List">
     id, user_id, `operation`, operation_content, operation_time
   </sql>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.LogExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.LogExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -102,19 +102,19 @@
     delete from log
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.LogExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.LogExample">
     delete from log
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.Log" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.Log" useGeneratedKeys="true">
     insert into log (user_id, `operation`, operation_content, 
       operation_time)
     values (#{userId,jdbcType=INTEGER}, #{operation,jdbcType=VARCHAR}, #{operationContent,jdbcType=VARCHAR}, 
       #{operationTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.Log" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.Log" useGeneratedKeys="true">
     insert into log
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
@@ -145,7 +145,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.LogExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.LogExample" resultType="java.lang.Long">
     select count(*) from log
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -185,7 +185,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.Log">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.Log">
     update log
     <set>
       <if test="userId != null">
@@ -203,7 +203,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.Log">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.Log">
     update log
     set user_id = #{userId,jdbcType=INTEGER},
       `operation` = #{operation,jdbcType=VARCHAR},

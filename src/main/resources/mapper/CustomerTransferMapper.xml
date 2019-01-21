@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.CustomerTransferMapper">
+<mapper namespace="com.huahua.crm.mapper.CustomerTransferMapper">
     <cache/>
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.CustomerTransfer">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.CustomerTransfer">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="customer_id" jdbcType="INTEGER" property="customerId" />
     <result column="old_manager_id" jdbcType="INTEGER" property="oldManagerId" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List">
     id, customer_id, old_manager_id, new_manager_id, reason, `time`
   </sql>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.CustomerTransferExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.CustomerTransferExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -103,19 +103,19 @@
     delete from customer_transfer
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.CustomerTransferExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.CustomerTransferExample">
     delete from customer_transfer
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.CustomerTransfer" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.CustomerTransfer" useGeneratedKeys="true">
     insert into customer_transfer (customer_id, old_manager_id, new_manager_id, 
       reason, `time`)
     values (#{customerId,jdbcType=INTEGER}, #{oldManagerId,jdbcType=INTEGER}, #{newManagerId,jdbcType=INTEGER}, 
       #{reason,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.CustomerTransfer" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.CustomerTransfer" useGeneratedKeys="true">
     insert into customer_transfer
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="customerId != null">
@@ -152,7 +152,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.CustomerTransferExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.CustomerTransferExample" resultType="java.lang.Long">
     select count(*) from customer_transfer
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -196,7 +196,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.CustomerTransfer">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.CustomerTransfer">
     update customer_transfer
     <set>
       <if test="customerId != null">
@@ -217,7 +217,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.CustomerTransfer">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.CustomerTransfer">
     update customer_transfer
     set customer_id = #{customerId,jdbcType=INTEGER},
       old_manager_id = #{oldManagerId,jdbcType=INTEGER},

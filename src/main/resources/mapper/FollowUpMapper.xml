@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.FollowUpMapper">
+<mapper namespace="com.huahua.crm.mapper.FollowUpMapper">
     <cache/>
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.FollowUp">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.FollowUp">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
     <result column="address" jdbcType="VARCHAR" property="address" />
@@ -14,7 +14,7 @@
     <result column="manager_id" jdbcType="INTEGER" property="managerId" />
     <result column="delete_status" jdbcType="INTEGER" property="deleteStatus" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.neuedu.crm.pojo.FollowUp">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.huahua.crm.pojo.FollowUp">
     <result column="document" jdbcType="LONGVARCHAR" property="document" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -82,7 +82,7 @@
   <sql id="Blob_Column_List">
     document
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.neuedu.crm.pojo.FollowUpExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.huahua.crm.pojo.FollowUpExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -106,7 +106,7 @@
       </if>
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.FollowUpExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.FollowUpExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -140,13 +140,13 @@
     delete from follow_up
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.FollowUpExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.FollowUpExample">
     delete from follow_up
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.FollowUp" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.FollowUp" useGeneratedKeys="true">
     insert into follow_up (`time`, address, `general`, 
       remark, content, `result`, 
       customer_id, manager_id, delete_status, 
@@ -156,7 +156,7 @@
       #{customerId,jdbcType=INTEGER}, #{managerId,jdbcType=INTEGER}, #{deleteStatus,jdbcType=INTEGER}, 
       #{document,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.FollowUp" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.FollowUp" useGeneratedKeys="true">
     insert into follow_up
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="time != null">
@@ -223,7 +223,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.FollowUpExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.FollowUpExample" resultType="java.lang.Long">
     select count(*) from follow_up
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -303,7 +303,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.FollowUp">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.FollowUp">
     update follow_up
     <set>
       <if test="time != null">
@@ -339,7 +339,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.neuedu.crm.pojo.FollowUp">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.huahua.crm.pojo.FollowUp">
     update follow_up
     set `time` = #{time,jdbcType=TIMESTAMP},
       address = #{address,jdbcType=VARCHAR},
@@ -353,7 +353,7 @@
       document = #{document,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.FollowUp">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.FollowUp">
     update follow_up
     set `time` = #{time,jdbcType=TIMESTAMP},
       address = #{address,jdbcType=VARCHAR},

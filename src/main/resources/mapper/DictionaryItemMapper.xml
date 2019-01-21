@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.neuedu.crm.mapper.DictionaryItemMapper">
+<mapper namespace="com.huahua.crm.mapper.DictionaryItemMapper">
     <cache/>
-  <resultMap id="BaseResultMap" type="com.neuedu.crm.pojo.DictionaryItem">
+  <resultMap id="BaseResultMap" type="com.huahua.crm.pojo.DictionaryItem">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="type_id" jdbcType="INTEGER" property="typeId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List">
     id, type_id, `name`, `status`
   </sql>
-  <select id="selectByExample" parameterType="com.neuedu.crm.pojo.DictionaryItemExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.huahua.crm.pojo.DictionaryItemExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -101,19 +101,19 @@
     delete from dictionary_item
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.neuedu.crm.pojo.DictionaryItemExample">
+  <delete id="deleteByExample" parameterType="com.huahua.crm.pojo.DictionaryItemExample">
     delete from dictionary_item
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.DictionaryItem" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.DictionaryItem" useGeneratedKeys="true">
     insert into dictionary_item (type_id, `name`, `status`
       )
     values (#{typeId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.neuedu.crm.pojo.DictionaryItem" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.huahua.crm.pojo.DictionaryItem" useGeneratedKeys="true">
     insert into dictionary_item
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="typeId != null">
@@ -138,7 +138,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.neuedu.crm.pojo.DictionaryItemExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.huahua.crm.pojo.DictionaryItemExample" resultType="java.lang.Long">
     select count(*) from dictionary_item
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -174,7 +174,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.crm.pojo.DictionaryItem">
+  <update id="updateByPrimaryKeySelective" parameterType="com.huahua.crm.pojo.DictionaryItem">
     update dictionary_item
     <set>
       <if test="typeId != null">
@@ -189,7 +189,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.neuedu.crm.pojo.DictionaryItem">
+  <update id="updateByPrimaryKey" parameterType="com.huahua.crm.pojo.DictionaryItem">
     update dictionary_item
     set type_id = #{typeId,jdbcType=INTEGER},
       `name` = #{name,jdbcType=VARCHAR},
